@@ -1,0 +1,27 @@
+@startuml
+title ЛР2. Архитектура стабилизированного анализатора миссий
+skinparam packageStyle rectangle
+skinparam linetype ortho
+left to right direction
+
+package GUI
+package Analysis
+package Parsers
+package Builders
+package Entities
+package Reports
+package Validation
+package Filtering
+package Logging
+
+GUI --> Analysis
+Analysis --> Parsers
+Analysis --> Reports
+Analysis --> Validation
+Parsers --> Builders
+Builders --> Entities
+Reports --> Entities
+Validation --> Entities
+Analysis ..> Logging
+Analysis ..> Filtering
+@enduml
